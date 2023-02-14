@@ -1,7 +1,6 @@
 import { Grid, Link } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import LoginComponent from '../../Components/Login/LoginComponent';
-import SignUpComponent from '../../Components/SignUp/SignUpComponent';
 
 
 export default function LoginPage() {

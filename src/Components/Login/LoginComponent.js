@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
-    Avatar, Button, Container, CssBaseline,
-    Grid, Link, TextField, Typography
+    Avatar, Button, Container, CssBaseline, TextField, Typography
 } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../../Services/userServices';
+import { UserContext } from '../../context/UserContext';
 
 const userRol = {
     "Entities.Cliente": "/Cliente",
@@ -17,6 +17,7 @@ function LoginComponent() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     const [login, setLogin] = useState({});
+    const { user, setUser } = useContext(UserContext);
 
     const handleEmailChange = (value) => {
         setEmail(value);
@@ -27,7 +28,7 @@ function LoginComponent() {
 
     useEffect(() => {
         navigate(userRol[login.tipo] || "/");
-    }, [login]);
+    }, [login, navigate]);
 
     const handleLogin = async () => {
         const data = {
@@ -37,6 +38,7 @@ function LoginComponent() {
         try {
             const result = await loginUser(data)
             setLogin(result);
+            setUser(result);
         } catch (error) {
             console.error(error);
             alert(error.message);

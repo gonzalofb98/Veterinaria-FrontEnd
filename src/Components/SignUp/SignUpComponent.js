@@ -22,9 +22,7 @@ export default function SignUpComponent(props) {
 
     const handleSignUp = async () => {
         try {
-            console.log(formData)
             const result = await signUp(formData, props.tipo);
-            console.log(result)
             alert("usuario agregado correctamente");
             navigate("/login");
         } catch (error) {
