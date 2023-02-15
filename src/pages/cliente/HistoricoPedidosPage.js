@@ -100,18 +100,14 @@ export default function CollapsibleTable() {
         handlegetPedidosPorCliente()
     }, [handlegetPedidosPorCliente])
 
-
-
-
-
     const handleClose = async () => {
         navigate("/Cliente");
     }
 
     return (
         <div>
-            <Header title="Veterinaria" />
-            <Container component="main" maxWidth="xs">
+            <Header title="Veterinaria" tipo="Cliente" />
+            <Container component="main" maxWidth="lg">
                 <CssBaseline />
                 <Typography marginTop={5} component="h1" variant="h5">
                     Historial de Pedidos

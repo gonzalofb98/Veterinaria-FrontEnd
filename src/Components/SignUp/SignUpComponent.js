@@ -24,7 +24,7 @@ export default function SignUpComponent(props) {
         try {
             const result = await signUp(formData, props.tipo);
             alert("usuario agregado correctamente");
-            navigate("/login");
+            navigate(props.tipo === "cliente" ? "/login" : "/ListadoVendedores");
         } catch (error) {
             console.error(error);
             alert(error.message);
@@ -123,7 +123,7 @@ export default function SignUpComponent(props) {
                         }}
                         onClick={handleSignUp}
                     >
-                        Sign Up
+                        Registrar
                     </Button>
                 </form>
             </div>

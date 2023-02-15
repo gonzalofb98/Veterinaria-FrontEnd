@@ -69,7 +69,7 @@ export default function RegistrarMascotaPage() {
 
     return (
         <div>
-            <Header title="Veterinaria" />
+            <Header title="Veterinaria" tipo="Cliente" />
             <Container component="main" maxWidth="xs">
                 <CssBaseline />
                 <div sx={{

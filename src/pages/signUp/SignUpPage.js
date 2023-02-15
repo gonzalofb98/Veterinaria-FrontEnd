@@ -6,7 +6,7 @@ import SignUpComponent from '../../Components/SignUp/SignUpComponent';
 export default function SignUpPage(props) {
     const navigate = useNavigate();
     const handleLoginClick = () => {
-        navigate('/login');
+        navigate(props.tipo === "cliente" ? "/login" : "/ListadoVendedores");
     };
     return (
         <div >
@@ -21,7 +21,7 @@ export default function SignUpPage(props) {
                     <Link onClick={
                         handleLoginClick
                     } variant="body2">
-                        {"Already have an account? Sign in"}
+                        {"Volver Atras"}
                     </Link>
                 </Grid>
             </Grid>

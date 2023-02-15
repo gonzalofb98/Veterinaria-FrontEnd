@@ -44,7 +44,11 @@ function Header(props) {
                         {props.title}
                     </Typography>
 
+
                     <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'flex-end' }}>
+                        <Typography >
+                            {props.tipo}
+                        </Typography>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <Avatar alt="Remy Sharp"
@@ -53,6 +57,8 @@ function Header(props) {
                             </IconButton>
                         </Tooltip>
                     </Box>
+
+
                     <Menu
                         sx={{ mt: '45px' }}
                         id="menu-appbar"

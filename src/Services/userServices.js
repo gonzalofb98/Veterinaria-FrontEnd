@@ -65,3 +65,30 @@ export async function getPedidosPorCliente(email) {
         throw new Error("Error al traer los pedidos del cliente");
     }
 }
+
+export async function despacharPedido(email, data) {
+    try {
+        await axios.post('https://localhost:7183/api/Pedido/DespacharPedido?email=' + email, data);
+
+    } catch (e) {
+        throw new Error("Error al despachar el pedidos del cliente");
+    }
+}
+
+export async function getVendedores() {
+    try {
+        const response = await axios.get('https://localhost:7183/api/Usuario/Vendedores');
+        return response.data;
+    } catch (e) {
+        throw new Error("Error al traer los pedidos del cliente");
+    }
+}
+
+export async function getClientes() {
+    try {
+        const response = await axios.get('https://localhost:7183/api/Usuario/ClientesMascotas');
+        return response.data;
+    } catch (e) {
+        throw new Error("Error al traer los pedidos del cliente");
+    }
+}

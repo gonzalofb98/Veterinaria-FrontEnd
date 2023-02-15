@@ -6,7 +6,7 @@ import LoginComponent from '../../Components/Login/LoginComponent';
 export default function LoginPage() {
     const navigate = useNavigate();
     const handleSignUpClick = () => {
-        navigate('/signup');
+        navigate('/signUpCliente');
     };
     return (
         <div >
